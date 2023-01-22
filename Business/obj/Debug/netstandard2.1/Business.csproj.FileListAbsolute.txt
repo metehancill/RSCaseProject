@@ -1,0 +1,17 @@
+C:\Users\meteh\source\repos\RSCaseProject\Business\bin\Debug\netstandard2.1\Business.deps.json
+C:\Users\meteh\source\repos\RSCaseProject\Business\bin\Debug\netstandard2.1\Business.dll
+C:\Users\meteh\source\repos\RSCaseProject\Business\bin\Debug\netstandard2.1\Business.pdb
+C:\Users\meteh\source\repos\RSCaseProject\Business\bin\Debug\netstandard2.1\Core.dll
+C:\Users\meteh\source\repos\RSCaseProject\Business\bin\Debug\netstandard2.1\DataAccess.dll
+C:\Users\meteh\source\repos\RSCaseProject\Business\bin\Debug\netstandard2.1\Entities.dll
+C:\Users\meteh\source\repos\RSCaseProject\Business\bin\Debug\netstandard2.1\DataAccess.pdb
+C:\Users\meteh\source\repos\RSCaseProject\Business\bin\Debug\netstandard2.1\Entities.pdb
+C:\Users\meteh\source\repos\RSCaseProject\Business\bin\Debug\netstandard2.1\Core.pdb
+C:\Users\meteh\source\repos\RSCaseProject\Business\obj\Debug\netstandard2.1\Business.csproj.AssemblyReference.cache
+C:\Users\meteh\source\repos\RSCaseProject\Business\obj\Debug\netstandard2.1\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meteh\source\repos\RSCaseProject\Business\obj\Debug\netstandard2.1\Business.AssemblyInfoInputs.cache
+C:\Users\meteh\source\repos\RSCaseProject\Business\obj\Debug\netstandard2.1\Business.AssemblyInfo.cs
+C:\Users\meteh\source\repos\RSCaseProject\Business\obj\Debug\netstandard2.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\meteh\source\repos\RSCaseProject\Business\obj\Debug\netstandard2.1\Business.csproj.CopyComplete
+C:\Users\meteh\source\repos\RSCaseProject\Business\obj\Debug\netstandard2.1\Business.dll
+C:\Users\meteh\source\repos\RSCaseProject\Business\obj\Debug\netstandard2.1\Business.pdb

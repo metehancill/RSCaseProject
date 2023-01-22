@@ -11,7 +11,7 @@ namespace DataAccess.Concrete.Configurations
     {
         public virtual void Configure(EntityTypeBuilder<Storage> builder)
         {
-            builder.HasKey(x => x.ProductId);
+            builder.HasKey(x => x.StorageId);
         }
     }
     

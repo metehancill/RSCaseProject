@@ -13,5 +13,7 @@
         public static string NameAlreadyExist => "NameAlreadyExist";
         public static string TokenProviderException => "TokenProviderException";
         public static string Unknown => "Unknown";
+        public static string ProductAlreadyExist => "ProductAlreadyExist";
+        public static string AlreadyExist => "AlreadyExist";
     }
 }

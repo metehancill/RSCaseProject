@@ -5,6 +5,7 @@ using Core.Aspects.Autofac.Logging;
 using Core.CrossCuttingConcerns.Logging.Serilog.Loggers;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
+using Core.Utilities.Security.Hashing;
 using DataAccess.Abstract;
 using MediatR;
 using System;
@@ -20,13 +21,13 @@ namespace Business.Handlers.Users.Commands
         public string FullName { get; set; }
         public string Email { get; set; }
         public string MobilePhones { get; set; }
-        public bool Status { get; set; }
+        public bool isDeleted { get; set; }
         public DateTime BirthDate { get; set; }
         public int Gender { get; set; }
-        public DateTime RecordDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         public string Address { get; set; }
         public string Notes { get; set; }
-        public DateTime UpdateContactDate { get; set; }
+        public DateTime LastUpdatedDate { get; set; }
         public string Password { get; set; }
 
 
@@ -50,18 +51,21 @@ namespace Business.Handlers.Users.Commands
                 {
                     return new ErrorResult(Messages.NameAlreadyExist);
                 }
+                HashingHelper.CreatePasswordHash(request.Password, out var passwordSalt, out var passwordHash);
 
                 var user = new User
                 {
                     Email = request.Email,
                     FullName = request.FullName,
-                    Status = true,
+                    isDeleted = false,
                     Address = request.Address,
                     BirthDate = request.BirthDate,
                     CitizenId = request.CitizenId,
                     Gender = request.Gender,
                     Notes = request.Notes,
-                    MobilePhones = request.MobilePhones
+                    MobilePhones = request.MobilePhones,
+                    PasswordHash = passwordHash,
+                    PasswordSalt = passwordSalt,
                 };
 
                 _userRepository.Add(user);

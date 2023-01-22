@@ -22,12 +22,12 @@ namespace Tests.Helpers
                 Gender = 1,
                 MobilePhones = "05339262726",
                 Notes = "test",
-                RecordDate = DateTime.Now,
+                CreatedDate = DateTime.Now,
                 PasswordHash = passwordSalt,
                 PasswordSalt = passwordHash,
-                Status = true,
+                isDeleted = true,
                 AuthenticationProviderType = "Person",
-                UpdateContactDate = DateTime.Now
+                LastUpdatedDate = DateTime.Now
             };
         }
 
@@ -49,12 +49,12 @@ namespace Tests.Helpers
                     Gender = 1,
                     MobilePhones = "123456789",
                     Notes = "test",
-                    RecordDate = DateTime.Now,
+                    CreatedDate = DateTime.Now,
                     PasswordHash = passwordSalt,
                     PasswordSalt = passwordHash,
-                    Status = true,
+                    isDeleted = true,
                     AuthenticationProviderType = "User",
-                    UpdateContactDate = DateTime.Now
+                    LastUpdatedDate = DateTime.Now
                 };
                 list.Add(user);
             }

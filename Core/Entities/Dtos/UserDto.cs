@@ -10,7 +10,7 @@
         public string Notes { get; set; }
         public int Gender { get; set; }
         public string Password { get; set; }
-        public bool Status { get; set; }
+        public bool isDeleted { get; set; }
         public string RefreshToken { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace DataAccess.Concrete.Configurations
     {
         public virtual void Configure(EntityTypeBuilder<Customer> builder)
         {
-            builder.HasKey(x => x.CustomerId);
+            builder.HasKey(x => x.customerId);
         }
     }
 
