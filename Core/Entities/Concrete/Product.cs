@@ -9,7 +9,7 @@ namespace Core.Entities.Concrete
         public Product()
         {
             LastUpdatedDate = CreatedDate = DateTime.Now;
-            
+
         }
         public int ProductId { get; set; }
         public string ProductName { get; set; }

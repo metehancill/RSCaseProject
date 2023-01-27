@@ -49,7 +49,7 @@ namespace Business.Fakes.Handlers.Authorizations
                     FullName = request.FullName,
                     PasswordHash = passwordHash,
                     PasswordSalt = passwordSalt,
-                    isDeleted = false
+                    status = true
                 };
 
                 _userRepository.Add(user);

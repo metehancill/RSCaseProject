@@ -21,7 +21,7 @@ namespace Business.Handlers.Users.Commands
         public string FullName { get; set; }
         public string Email { get; set; }
         public string MobilePhones { get; set; }
-        public bool isDeleted { get; set; }
+        public bool status { get; set; }
         public DateTime BirthDate { get; set; }
         public int Gender { get; set; }
         public DateTime CreatedDate { get; set; }
@@ -57,7 +57,7 @@ namespace Business.Handlers.Users.Commands
                 {
                     Email = request.Email,
                     FullName = request.FullName,
-                    isDeleted = false,
+                    status = true,
                     Address = request.Address,
                     BirthDate = request.BirthDate,
                     CitizenId = request.CitizenId,

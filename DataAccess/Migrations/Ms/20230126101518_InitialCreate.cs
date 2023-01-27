@@ -8,43 +8,6 @@ namespace DataAccess.Migrations.Ms
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Consumer",
-                columns: table => new
-                {
-                    ConsumerId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MobilePhones = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Gender = table.Column<int>(type: "int", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RolId = table.Column<int>(type: "int", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
-                    CreatedConsumerId = table.Column<int>(type: "int", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedConsumerId = table.Column<int>(type: "int", nullable: false),
-                    isDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Consumer", x => x.ConsumerId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ConsumerRoles",
-                columns: table => new
-                {
-                    ConsumerRolesId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RoleName = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ConsumerRoles", x => x.ConsumerRolesId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Customers",
                 columns: table => new
                 {
@@ -288,7 +251,7 @@ namespace DataAccess.Migrations.Ms
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MobilePhones = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
-                    isDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    status = table.Column<bool>(type: "bit", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -496,12 +459,6 @@ namespace DataAccess.Migrations.Ms
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Consumer");
-
-            migrationBuilder.DropTable(
-                name: "ConsumerRoles");
-
             migrationBuilder.DropTable(
                 name: "Customers");
 

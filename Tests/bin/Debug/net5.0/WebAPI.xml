@@ -211,27 +211,6 @@
              <param name="data"></param>
              <returns></returns>
         </member>
-        <member name="M:WebAPI.Controllers.ConsumersController.Add(Business.Handlers.Consumers.Commands.CreateConsumerCommand)">
-            <summary>
-            Add Consumer.
-            </summary>
-            <param name="createConsumer"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebAPI.Controllers.ConsumersController.Update(Business.Handlers.Consumers.Commands.UpdateConsumerCommand)">
-            <summary>
-            Update Consumer.
-            </summary>
-            <param name="updateConsumer"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebAPI.Controllers.ConsumersController.Delete(Business.Handlers.Consumers.Commands.DeleteConsumerCommand)">
-            <summary>
-            Delete Consumer.
-            </summary>
-            <param name="deleteConsumer"></param>
-            <returns></returns>
-        </member>
         <member name="M:WebAPI.Controllers.CustomersController.Add(Business.Handlers.Customers.Commands.CreateCustomerCommand)">
             <summary>
             Add Customer.
@@ -267,6 +246,14 @@
             </summary>
             <remarks>bla bla bla </remarks>
             <return>Customer List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.CustomersController.GetCustomerLookup">
+            <summary>
+             Customer Lookup
+            </summary>
+            <remarks>bla bla bla Customers</remarks>
+            <return>Users List</return>
             <response code="200"></response>
         </member>
         <member name="T:WebAPI.Controllers.GroupClaimsController">
@@ -517,6 +504,14 @@
             <return>Order List</return>
             <response code="200"></response>
         </member>
+        <member name="M:WebAPI.Controllers.OrdersController.GetOrderListDto">
+            <summary>
+            List Dto Order
+            </summary>
+            <remarks>bla bla bla Orders</remarks>
+            <return>Orders List</return>
+            <response code="200"></response>
+        </member>
         <member name="M:WebAPI.Controllers.ProductsController.Add(Business.Handlers.Products.Commands.CreateProductCommand)">
             <summary>
             Add Product.
@@ -554,6 +549,14 @@
             <return>Product List</return>
             <response code="200"></response>
         </member>
+        <member name="M:WebAPI.Controllers.ProductsController.GetProductLookup">
+            <summary>
+             Product Lookup
+            </summary>
+            <remarks>bla bla bla Products</remarks>
+            <return>Products List</return>
+            <response code="200"></response>
+        </member>
         <member name="M:WebAPI.Controllers.StoragesController.Add(Business.Handlers.Storages.Commands.CreateStorageCommand)">
             <summary>
             Add Storage.
@@ -588,6 +591,22 @@
             It brings the details according to its id.
             </summary>
             <remarks>bla bla bla </remarks>
+            <return>Storage List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.StoragesController.GetStorageListDto">
+            <summary>
+            List Product storageDto
+            </summary>
+            <remarks>bla bla bla Product Storage</remarks>
+            <return>Product Storage List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.StoragesController.GetStorageLookup">
+            <summary>
+             Storage Lookup
+            </summary>
+            <remarks>bla bla bla Storage</remarks>
             <return>Storage List</return>
             <response code="200"></response>
         </member>

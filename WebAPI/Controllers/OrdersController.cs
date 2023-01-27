@@ -1,6 +1,8 @@
 ﻿
 using Business.Handlers.Orders.Commands;
 using Business.Handlers.Orders.Queries;
+using Business.Handlers.Storages.Queries;
+using Business.Handlers.Translates.Queries;
 using Core.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -73,7 +75,20 @@ namespace WebAPI.Controllers
         }
 
 
-
+        /// <summary>
+        /// List Dto Order
+        /// </summary>
+        /// <remarks>bla bla bla Orders</remarks>
+        /// <return>Orders List</return>
+        /// <response code="200"></response>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Order>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getorderlistdto")]
+        public async Task<IActionResult> GetOrderListDto()
+        {
+            return GetResponseOnlyResultData(await Mediator.Send(new GetOrderListDtoQuery()));
+        }
 
 
     }

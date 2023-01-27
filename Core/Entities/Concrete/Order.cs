@@ -8,8 +8,7 @@ namespace Core.Entities.Concrete
     {
         public Order()
         {
-            LastUpdatedDate = CreatedDate = DateTime.Now;
-
+            LastUpdatedDate=CreatedDate=DateTime.Now; 
         }
         public int OrderId { get; set; }
         public int CustomerId { get; set; }
@@ -19,6 +18,7 @@ namespace Core.Entities.Concrete
         public DateTime CreatedDate { get; set; }
         public DateTime LastUpdatedDate { get; set; }
         public int LastUpdatedUserId { get; set; }
+
         public bool isDeleted { get; set; }
     }
 }

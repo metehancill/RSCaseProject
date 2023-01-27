@@ -6,10 +6,8 @@ namespace Core.Entities.Concrete
 {
     public class Customer:IEntity
     {
-        public Customer()
-        {
+        public Customer() {
             LastUpdatedDate = CreatedDate = DateTime.Now;
-
         }
         public string CustomerName { get; set; }
         public int customerId { get; set; }
@@ -20,6 +18,7 @@ namespace Core.Entities.Concrete
         public DateTime CreatedDate { get; set; }
         public DateTime LastUpdatedDate { get; set; }
         public int LastUpdatedUserId { get; set; }
+
         public bool isDeleted { get; set; }
     }
 }

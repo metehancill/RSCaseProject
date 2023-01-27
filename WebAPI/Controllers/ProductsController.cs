@@ -1,8 +1,10 @@
 ﻿
 
+using Business.Handlers.Customers.Queries;
 using Business.Handlers.Products.Commands;
 using Business.Handlers.Products.Queries;
 using Core.Entities.Concrete;
+using Core.Entities.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -88,7 +90,20 @@ namespace WebAPI.Controllers
             return GetResponseOnlyResultData(await Mediator.Send(new GetProductQuery { ProductId = productsId }));
         }
 
-
+        /// <summary>
+        ///  Product Lookup
+        /// </summary>
+        /// <remarks>bla bla bla Products</remarks>
+        /// <return>Products List</return>
+        /// <response code="200"></response>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<SelectionItem>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getproductlookup")]
+        public async Task<IActionResult> GetProductLookup()
+        {
+            return GetResponseOnlyResultData(await Mediator.Send(new GetProductLookupQuery()));
+        }
 
     }
 }

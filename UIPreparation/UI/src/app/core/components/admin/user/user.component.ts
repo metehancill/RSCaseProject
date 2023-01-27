@@ -161,7 +161,8 @@ export class UserComponent implements AfterViewInit, OnInit {
       address: [""],
       notes: [""],
       mobilePhones: [""],
-      status: [true]
+      status: [true],
+      password:[""]
     })
   }
 

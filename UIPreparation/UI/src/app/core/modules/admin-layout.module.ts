@@ -28,8 +28,10 @@ import { OperationClaimComponent } from '../components/admin/operationclaim/oper
 import { LogDtoComponent } from '../components/admin/log/logDto.component';
 import { MatSortModule } from '@angular/material/sort';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
-
+import { CustomerComponent } from './../components/admin/customer/customer.component';
+import { StorageComponent } from 'app/core/components/admin/storage/storage.component';
+import { ProductComponent } from '../components/admin/product/product.component';
+import { OrderComponent } from '../components/admin/order/order.component';
 // export function layoutHttpLoaderFactory(http: HttpClient) {
 // 
 //   return new TranslateHttpLoader(http,'../../../../../../assets/i18n/','.json');
@@ -37,7 +39,9 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
     imports: [
-        CommonModule,
+
+
+    CommonModule,
         RouterModule.forChild(AdminLayoutRoutes),
         FormsModule,
         ReactiveFormsModule,
@@ -52,6 +56,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
         MatSortModule,
         MatCheckboxModule,
         NgbModule,
+        
         NgMultiSelectDropDownModule,
         SweetAlert2Module,
         TranslateModule.forChild({
@@ -71,7 +76,11 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
         LanguageComponent,
         TranslateComponent,
         OperationClaimComponent,
-        LogDtoComponent
+        LogDtoComponent,
+        CustomerComponent,
+        StorageComponent, 
+        ProductComponent,
+        OrderComponent,
 
     ]
 })

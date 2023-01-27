@@ -6,4 +6,5 @@ export class User {
 	notes: string;
 	status: boolean;
 	mobilePhones: string;
+	password:string;
 }

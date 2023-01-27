@@ -2,6 +2,7 @@
 using Business.Handlers.Storages.Commands;
 using Business.Handlers.Storages.Queries;
 using Core.Entities.Concrete;
+using Core.Entities.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -82,11 +83,37 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Storage))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
         [HttpGet("getbyid")]
-        public async Task<IActionResult> GetById(int productsId)
+        public async Task<IActionResult> GetById(int storagesId)
         {
-            return GetResponseOnlyResultData(await Mediator.Send(new GetStorageQuery { ProductId = productsId }));
+            return GetResponseOnlyResultData(await Mediator.Send(new GetStorageQuery { StorageId = storagesId }));
         }
-
-
+        /// <summary>
+        /// List Product storageDto
+        /// </summary>
+        /// <remarks>bla bla bla Product Storage</remarks>
+        /// <return>Product Storage List</return>
+        /// <response code="200"></response>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Storage>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getstoragelistdto")]
+        public async Task<IActionResult> GetStorageListDto()
+        {
+            return GetResponseOnlyResultData(await Mediator.Send(new GetStorageListDtoQuery()));
+        }
+        /// <summary>
+        ///  Storage Lookup
+        /// </summary>
+        /// <remarks>bla bla bla Storage</remarks>
+        /// <return>Storage List</return>
+        /// <response code="200"></response>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<SelectionItem>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getstoragelookup")]
+        public async Task<IActionResult> GetStorageLookup()
+        {
+            return GetResponseOnlyResultData(await Mediator.Send(new GetStorageLookupQuery()));
+        }
     }
 }

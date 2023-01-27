@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.Configurations
             builder.Property(x => x.CitizenId).IsRequired();
             builder.Property(x => x.FullName).HasMaxLength(100).IsRequired();
             builder.Property(x => x.Email).HasMaxLength(50);
-            builder.Property(x => x.isDeleted).IsRequired();
+            builder.Property(x => x.status).IsRequired();
             builder.Property(x => x.BirthDate);
             builder.Property(x => x.Gender);
             builder.Property(x => x.CreatedDate);

@@ -25,7 +25,7 @@ namespace Tests.Helpers
                 CreatedDate = DateTime.Now,
                 PasswordHash = passwordSalt,
                 PasswordSalt = passwordHash,
-                isDeleted = true,
+                status = true,
                 AuthenticationProviderType = "Person",
                 LastUpdatedDate = DateTime.Now
             };
@@ -52,7 +52,7 @@ namespace Tests.Helpers
                     CreatedDate = DateTime.Now,
                     PasswordHash = passwordSalt,
                     PasswordSalt = passwordHash,
-                    isDeleted = true,
+                    status = true,
                     AuthenticationProviderType = "User",
                     LastUpdatedDate = DateTime.Now
                 };

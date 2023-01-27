@@ -16,7 +16,7 @@ namespace Business.Handlers.Storages.Queries
 {
     public class GetStorageQuery:IRequest<IDataResult<Storage>>
     {
-        public int ProductId { get; set; }
+        public int StorageId { get; set; }
 
         public class GetStorageQueryHandler : IRequestHandler<GetStorageQuery, IDataResult<Storage>>
         {
@@ -34,7 +34,7 @@ namespace Business.Handlers.Storages.Queries
             [LogAspect(typeof(FileLogger))]
             public async Task<IDataResult<Storage>>Handle(GetStorageQuery request,CancellationToken cancellationToken)
             {
-                var storage=await _storageRepository.GetAsync(s=>s.ProductId==request.ProductId);
+                var storage=await _storageRepository.GetAsync(s=>s.StorageId==request.StorageId);
                 return new SuccessDataResult<Storage>(storage); 
             }
         }

@@ -6,10 +6,9 @@ namespace Core.Entities.Concrete
 {
     public class Storage:IEntity
     {
-        public Storage()
-        {
-            LastUpdatedDate = CreatedDate = DateTime.Now;
 
+        public Storage() {
+            LastUpdatedDate = CreatedDate = DateTime.Now;
         }
         public int StorageId { get; set; }
         public int ProductId { get; set; }

@@ -23,14 +23,18 @@ namespace Business.Handlers.Orders.Commands
         public string Piece { get; set; }
         public int CreatedUserId { get; set; }
         public DateTime CreatedDate { get; set; }
+        public bool isDeleted { get; set; }
 
         public class CreateOrderCommandHandler:IRequestHandler<CreateOrderCommand,IResult> 
         {
             private readonly IOrderRepository _orderRepository;
+            private readonly IStorageRepository _storageRepository;
 
-            public CreateOrderCommandHandler(IOrderRepository orderRepository)
+            public CreateOrderCommandHandler(IOrderRepository orderRepository,IStorageRepository storageRepository )
             {
                 _orderRepository = orderRepository;
+                _storageRepository = storageRepository;
+               
             }
             [SecuredOperation(Priority = 1)]
             [CacheRemoveAspect()]
@@ -38,19 +42,32 @@ namespace Business.Handlers.Orders.Commands
             public async Task<IResult>Handle(CreateOrderCommand request,CancellationToken cancellationToken)
             {
                 var isThereAnyOrder=await _orderRepository.GetAsync(o=>o.OrderId==request.OrderId);
+                var isThereAnyStorage = await _storageRepository.GetAsync(p => p.ProductId == request.ProductId);
 
                 if(isThereAnyOrder !=null)
                 {
                     return new ErrorResult(Messages.AlreadyExist);
                 }
 
+                if(Convert.ToInt32(isThereAnyStorage.ProductStock) < Convert.ToInt32(request.Piece))
+                {
+                    return new ErrorResult(Messages.InvalidStock);
+
+                }
+                else
+                {
+                    isThereAnyStorage.ProductStock -= Convert.ToInt32(request.Piece);
+                   
+                }
+               
                 var order = new Order
                 {
                  CustomerId=request.CustomerId,
                  ProductId=request.ProductId,
                  Piece=request.Piece,
                  CreatedDate=request.CreatedDate,
-                    CreatedUserId = request.CreatedUserId,
+                 CreatedUserId = request.CreatedUserId,
+                 isDeleted = false
                 };
 
                 _orderRepository.Add(order);

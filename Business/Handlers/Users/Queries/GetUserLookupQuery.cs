@@ -30,7 +30,7 @@ namespace Business.Handlers.Users.Queries
             [LogAspect(typeof(FileLogger))]
             public async Task<IDataResult<IEnumerable<SelectionItem>>> Handle(GetUserLookupQuery request, CancellationToken cancellationToken)
             {
-                var list = await _userRepository.GetListAsync(x => x.isDeleted);
+                var list = await _userRepository.GetListAsync(x => x.status);
                 var userLookup = list.Select(x => new SelectionItem() { Id = x.UserId.ToString(), Label = x.FullName });
                 return new SuccessDataResult<IEnumerable<SelectionItem>>(userLookup);
             }

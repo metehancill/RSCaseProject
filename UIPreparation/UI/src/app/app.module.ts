@@ -17,6 +17,9 @@ import { AuthInterceptorService } from './core/interceptors/auth-interceptor.ser
 import { HttpEntityRepositoryService } from './core/services/http-entity-repository.service';
 
 
+//import { CustomerComponent } from './core/components/admin/customer/customer.component';
+
+
 // i18 kullanıclak ise aşağıdaki metod aktif edilecek
 
 //  export function HttpLoaderFactory(http: HttpClient) {
@@ -56,7 +59,11 @@ export function tokenGetter() {
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    
+   
+    
+  
   ],
 
   providers: [

@@ -8,7 +8,7 @@ namespace Core.Entities.Concrete
         public User()
         {
             LastUpdatedDate = CreatedDate = DateTime.Now;
-            isDeleted = false;
+            status = true;
         }
 
         public int UserId { get; set; }
@@ -17,7 +17,7 @@ namespace Core.Entities.Concrete
         public string Email { get; set; }
         public string RefreshToken { get; set; }
         public string MobilePhones { get; set; }
-        public bool isDeleted { get; set; }
+        public bool status { get; set; }
         public DateTime BirthDate { get; set; }
         public int Gender { get; set; }
         public DateTime CreatedDate { get; set; }

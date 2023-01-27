@@ -19,69 +19,6 @@ namespace DataAccess.Migrations.Ms
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Core.Entities.Concrete.Consumer", b =>
-                {
-                    b.Property<int>("ConsumerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CreatedConsumerId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Gender")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LastUpdatedConsumerId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("MobilePhones")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RolId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("isDeleted")
-                        .HasColumnType("bit");
-
-                    b.HasKey("ConsumerId");
-
-                    b.ToTable("Consumer");
-                });
-
-            modelBuilder.Entity("Core.Entities.Concrete.ConsumerRoles", b =>
-                {
-                    b.Property<int>("ConsumerRolesId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("RoleName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ConsumerRolesId");
-
-                    b.ToTable("ConsumerRoles");
-                });
-
             modelBuilder.Entity("Core.Entities.Concrete.Customer", b =>
                 {
                     b.Property<int>("customerId")
@@ -2199,7 +2136,7 @@ namespace DataAccess.Migrations.Ms
                     b.Property<string>("RefreshToken")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("isDeleted")
+                    b.Property<bool>("status")
                         .HasColumnType("bit");
 
                     b.HasKey("UserId");

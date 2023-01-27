@@ -6,5 +6,6 @@
         public static string VerifyCid => "VerifyCid";
         public static string WrongCitizenId => "WrongCID";
         public static string CitizenNumber => "CID";
+        public static string InvalidStock => "InvalidStock";
     }
 }

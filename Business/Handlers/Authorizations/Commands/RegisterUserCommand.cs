@@ -33,10 +33,9 @@ namespace Business.Handlers.Authorizations.Commands
             }
 
 
-            [SecuredOperation(Priority = 1)]
+           
             [ValidationAspect(typeof(RegisterUserValidator), Priority = 2)]
-            [CacheRemoveAspect()]
-            [LogAspect(typeof(FileLogger))]
+          
             public async Task<IResult> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
             {
                 var isThereAnyUser = await _userRepository.GetAsync(u => u.Email == request.Email);
@@ -54,7 +53,7 @@ namespace Business.Handlers.Authorizations.Commands
                     FullName = request.FullName,
                     PasswordHash = passwordHash,
                     PasswordSalt = passwordSalt,
-                    isDeleted = false
+                    status = true
                 };
 
                 _userRepository.Add(user);

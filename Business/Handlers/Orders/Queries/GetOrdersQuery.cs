@@ -1,4 +1,5 @@
-﻿using Business.BusinessAspects;
+﻿using AutoMapper;
+using Business.BusinessAspects;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Logging;
 using Core.CrossCuttingConcerns.Logging.Serilog.Loggers;
@@ -20,17 +21,20 @@ namespace Business.Handlers.Orders.Queries
         {
             private readonly IOrderRepository _orderRepository;
             private readonly IMediator _mediator;
+            private readonly IMapper _mapper;
 
             public GetOrdersQueryHandler(IOrderRepository orderRepository, IMediator mediator)
             {
                 _orderRepository = orderRepository;
                 _mediator = mediator;
+              
             }
             [SecuredOperation(Priority = 1)]
             [CacheRemoveAspect()]
             [LogAspect(typeof(FileLogger))]
             public async Task<IDataResult<IEnumerable<Order>>>Handle(GetOrdersQuery request,CancellationToken cancellationToken)
             {
+              
                 return new SuccessDataResult<IEnumerable<Order>>(await _orderRepository.GetListAsync());
             }
         }

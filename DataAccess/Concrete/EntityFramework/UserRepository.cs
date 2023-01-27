@@ -41,7 +41,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         public async Task<User> GetByRefreshToken(string refreshToken)
         {
-            return await Context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken && u.isDeleted);
+            return await Context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken && u.status);
         }
     }
 }
